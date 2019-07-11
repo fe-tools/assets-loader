@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "strict": true,
+    "declaration": true,
+    // "declarationDir": "types",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "lib",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}

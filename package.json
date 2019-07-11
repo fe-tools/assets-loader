@@ -1,0 +1,67 @@
+{
+  "name": "@fe-tools/assets-loader",
+  "version": "0.1.0",
+  "description": "assets loader",
+  "main": "dist/assetsLoader.common.js",
+  "module": "dist/assetsLoader.esm.js",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Wizard67 <wizard67.hjn@gmail.com>",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "dev": "rollup -w -c rollup.config.js",
+    "prebuild": "rimraf dist lib",
+    "build": "tsc --module commonjs && rollup -c rollup.config.js",
+    "test": "jest",
+    "test:cover": "jest --collect-coverage",
+    "commit": "git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@types/events": "^3.0.0",
+    "@types/jest": "^24.0.15",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.16.2",
+    "rollup-jest": "^0.0.2",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "events": "^3.0.0"
+  }
+}

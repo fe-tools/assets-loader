@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bar-wrap {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      width: 600px;
+      height: 40px;
+      padding: 10px;
+      border: 2px rgb(17, 117, 211) solid;
+      border-radius: 2000px;
+    }
+    .bar {
+      position: relative;
+      width: 0;
+      height: 20px;
+      border-radius: 2000px;
+      background-color: rgb(50, 146, 255);
+      transition: all .5s ease-in-out;
+    }
+    .bar::after {
+      position: absolute;
+      content: attr(data-progress) "%";
+      top: 40px;
+      right: 0;
+      color: rgb(17, 117, 211);
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="bar-wrap">
+      <div class="bar" style="width: 0" data-progress=""></div>
+    </div>
+  </main>
+  <script src="../dist/assetsLoader.js"></script>
+  <script>
+    const el = document.querySelector('.bar')
+    Promise.all(assetsLoader([
+      'https://picsum.photos/id/1/1000/800.jpg',
+      'https://picsum.photos/id/2/800/600.jpg'
+    ], {
+      delay: [1, 5],
+      effect: progress => {
+        el.style.width = `${ progress }%`
+        el.dataset.progress = `${ parseInt(progress) }`
+      }
+    })).then(res => console.log('all assets are loaded'))
+  </script>
+</body>
+</html>
