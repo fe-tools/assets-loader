@@ -18,7 +18,8 @@
     "build": "tsc --module commonjs && rollup -c rollup.config.js",
     "test": "jest",
     "test:cover": "jest --collect-coverage",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "bash script/release.sh"
   },
   "husky": {
     "hooks": {
