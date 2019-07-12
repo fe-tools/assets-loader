@@ -1,10 +1,14 @@
 {
   "name": "@fe-tools/assets-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "assets loader",
   "main": "dist/assetsLoader.common.js",
   "module": "dist/assetsLoader.esm.js",
   "typings": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "license": "MIT",
   "author": "Wizard67 <wizard67.hjn@gmail.com>",
   "scripts": {
