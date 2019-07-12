@@ -8,7 +8,7 @@ export type Loader = (
 
 export type Bundler = (
   assets: string[],
-  options: {
+  options?: {
     delay?: [number, number],
     debug?: Boolean,
     effect?: (progress: number) => void
