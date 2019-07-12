@@ -1,6 +1,6 @@
 {
   "name": "@fe-tools/assets-loader",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "assets loader",
   "main": "dist/assetsLoader.common.js",
   "module": "dist/assetsLoader.esm.js",
